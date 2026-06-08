@@ -1,0 +1,608 @@
+/* =========================
+   LOJA DO FUTURO
+   TEMA FUTURISTA ROXO
+========================= */
+
+:root{
+    --bg:#070B1A;
+    --bg-secondary:#0F172A;
+    --card:rgba(255,255,255,0.05);
+    --purple:#8B5CF6;
+    --purple-light:#A855F7;
+    --cyan:#22D3EE;
+    --white:#F8FAFC;
+    --gray:#94A3B8;
+    --border:rgba(255,255,255,0.08);
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0b1020;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--purple);
+    border-radius:20px;
+}
+
+/* =========================
+   PARTÍCULAS DE FUNDO
+========================= */
+
+.particles{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+}
+
+.particles::before{
+    content:"";
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:white;
+
+    box-shadow:
+    100px 150px #8B5CF6,
+    300px 300px #22D3EE,
+    600px 200px #A855F7,
+    900px 500px #22D3EE,
+    1200px 250px #8B5CF6,
+    1400px 600px #22D3EE;
+
+    animation:floatParticles 25s linear infinite;
+}
+
+@keyframes floatParticles{
+    from{
+        transform:translateY(100vh);
+    }
+
+    to{
+        transform:translateY(-100vh);
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:rgba(7,11,26,.8);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+    z-index:999;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+    color:var(--purple-light);
+
+    text-shadow:
+    0 0 10px var(--purple);
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:var(--white);
+    text-decoration:none;
+    transition:.3s;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:var(--purple-light);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:100px 20px;
+
+    position:relative;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(168,85,247,.25),
+    transparent 40%),
+
+    radial-gradient(circle at bottom right,
+    rgba(34,211,238,.15),
+    transparent 40%),
+
+    var(--bg);
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:var(--purple);
+
+    border-radius:50%;
+
+    filter:blur(280px);
+
+    opacity:.12;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:4.5rem;
+    margin-bottom:25px;
+    line-height:1.1;
+}
+
+.hero h1 span{
+    color:var(--purple-light);
+
+    text-shadow:
+    0 0 10px var(--purple),
+    0 0 25px var(--purple);
+}
+
+.hero p{
+    font-size:1.2rem;
+    color:var(--gray);
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn,
+button{
+
+    background:linear-gradient(
+    135deg,
+    var(--purple),
+    var(--purple-light)
+    );
+
+    border:none;
+
+    color:white;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+    font-weight:600;
+
+    transition:.4s;
+}
+
+.btn:hover,
+button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 15px var(--purple),
+    0 0 30px var(--purple),
+    0 0 60px rgba(168,85,247,.6);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    padding:100px 8%;
+}
+
+.section h2{
+    text-align:center;
+    font-size:2.8rem;
+    margin-bottom:25px;
+}
+
+.section p{
+    text-align:center;
+    color:var(--gray);
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+    margin-top:60px;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.card{
+
+    background:var(--card);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:var(--purple);
+
+    box-shadow:
+    0 0 25px rgba(168,85,247,.3);
+}
+
+.card h3{
+    color:white;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:var(--gray);
+    text-align:left;
+}
+
+/* =========================
+   TECNOLOGIAS
+========================= */
+
+.tech-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-top:50px;
+}
+
+.tech-item{
+
+    background:rgba(255,255,255,.04);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:.4s;
+}
+
+.tech-item:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 20px rgba(34,211,238,.3);
+}
+
+.tech-icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+/* =========================
+   BENEFÍCIOS
+========================= */
+
+.benefits{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:50px;
+}
+
+.benefit{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid var(--border);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+}
+
+.benefit h3{
+    margin-top:15px;
+}
+
+.benefit p{
+    margin-top:10px;
+}
+
+/* =========================
+   CONTADORES
+========================= */
+
+.stats{
+
+    padding:100px 8%;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+    text-align:center;
+}
+
+.stats div{
+
+    background:rgba(255,255,255,.04);
+
+    padding:40px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+}
+
+.counter{
+
+    font-size:3rem;
+
+    color:var(--purple-light);
+
+    margin-bottom:10px;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+form{
+
+    max-width:700px;
+
+    margin:50px auto 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+input,
+textarea{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    outline:none;
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:var(--purple);
+}
+
+textarea{
+    resize:none;
+    height:180px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    background:#050816;
+
+    border-top:1px solid rgba(255,255,255,.05);
+
+    color:var(--gray);
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s;
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+.glow{
+
+    animation:glow 3s infinite;
+}
+
+@keyframes glow{
+
+    0%{
+        text-shadow:0 0 5px var(--purple);
+    }
+
+    50%{
+        text-shadow:
+        0 0 20px var(--purple),
+        0 0 40px var(--purple);
+    }
+
+    100%{
+        text-shadow:0 0 5px var(--purple);
+    }
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:3.2rem;
+    }
+
+    .section h2{
+        font-size:2.2rem;
+    }
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .section{
+        padding:80px 6%;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .logo{
+        font-size:1.5rem;
+    }
+
+    nav{
+        gap:15px;
+    }
+
+    button,
+    .btn{
+        width:100%;
+    }
+}

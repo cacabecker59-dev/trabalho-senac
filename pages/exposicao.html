@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exposição Inteligente | Loja do Futuro</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#070B1A;
+    --card:rgba(255,255,255,.05);
+    --purple:#8B5CF6;
+    --purple2:#A855F7;
+    --cyan:#22D3EE;
+    --text:#F8FAFC;
+    --gray:#94A3B8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+    min-height:75vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    padding:50px;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(168,85,247,.25),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(34,211,238,.15),
+    transparent 35%);
+}
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    background:#8B5CF6;
+
+    border-radius:50%;
+
+    filter:blur(250px);
+
+    opacity:.15;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:var(--purple2);
+
+    text-shadow:
+    0 0 10px var(--purple),
+    0 0 25px var(--purple);
+}
+
+.hero p{
+    font-size:1.2rem;
+    line-height:1.8;
+    color:var(--gray);
+}
+
+/* CONTAINER */
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+    padding-bottom:100px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:var(--gray);
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.card{
+    background:var(--card);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--purple);
+
+    box-shadow:
+    0 0 30px rgba(168,85,247,.35);
+}
+
+.icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:var(--gray);
+    line-height:1.8;
+}
+
+/* SHOWCASE */
+
+.showcase{
+
+    margin-top:120px;
+
+    padding:60px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(139,92,246,.15),
+    rgba(34,211,238,.05)
+    );
+
+    border:1px solid rgba(168,85,247,.2);
+}
+
+.showcase h2{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.showcase p{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:1.8;
+    color:var(--gray);
+}
+
+/* STATS */
+
+.stats{
+
+    margin-top:100px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.stat{
+
+    background:var(--card);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:40px;
+
+    text-align:center;
+}
+
+.stat h2{
+    font-size:3rem;
+    color:var(--purple2);
+    margin-bottom:10px;
+}
+
+.stat p{
+    color:var(--gray);
+}
+
+/* TIMELINE */
+
+.timeline{
+
+    margin-top:120px;
+
+    max-width:900px;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    position:relative;
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    width:3px;
+
+    height:100%;
+
+    background:var(--purple);
+
+    transform:translateX(-50%);
+}
+
+.timeline-item{
+    width:50%;
+    padding:25px;
+}
+
+.timeline-item div{
+
+    background:var(--card);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+}
+
+.timeline-item:nth-child(odd){
+    padding-right:50px;
+}
+
+.timeline-item:nth-child(even){
+    margin-left:50%;
+    padding-left:50px;
+}
+
+.timeline-item h3{
+    margin-bottom:10px;
+}
+
+/* CTA */
+
+.cta{
+
+    margin-top:120px;
+
+    padding:70px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(139,92,246,.2),
+    rgba(168,85,247,.05)
+    );
+
+    border:1px solid rgba(168,85,247,.3);
+}
+
+.cta h2{
+    font-size:2.7rem;
+    margin-bottom:20px;
+}
+
+.cta p{
+
+    max-width:800px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    color:var(--gray);
+}
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--purple),
+    var(--purple2)
+    );
+
+    transition:.4s;
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 20px var(--purple),
+    0 0 40px var(--purple);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .timeline::before{
+        left:20px;
+    }
+
+    .timeline-item{
+        width:100%;
+        margin:0!important;
+        padding-left:60px!important;
+        padding-right:0!important;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Exposição <span>Inteligente</span>
+</h1>
+
+<p>
+Transformando vitrines, corredores e espaços comerciais em
+experiências digitais interativas que atraem, informam e encantam.
+</p>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<div class="section-title">
+
+<h2>Tecnologias de Exposição</h2>
+
+<p>
+A apresentação dos produtos evolui para uma experiência imersiva.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🥽</div>
+<h3>Realidade Aumentada</h3>
+<p>
+Visualize produtos em tamanho real antes da compra.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📺</div>
+<h3>Vitrines Digitais</h3>
+<p>
+Conteúdo dinâmico adaptado ao público presente.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🖥️</div>
+<h3>Telas Interativas</h3>
+<p>
+Catálogos completos com informações instantâneas.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📡</div>
+<h3>Sensores Inteligentes</h3>
+<p>
+Análise do comportamento dos visitantes.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">✨</div>
+<h3>Experiência Imersiva</h3>
+<p>
+Ambientes envolventes que aumentam o interesse do cliente.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🎯</div>
+<h3>Conteúdo Personalizado</h3>
+<p>
+Exibições ajustadas em tempo real conforme o perfil do visitante.
+</p>
+</div>
+
+</div>
+
+<div class="showcase">
+
+<h2>Showroom do Futuro</h2>
+
+<p>
+Os produtos deixam de ser apenas exibidos. Eles passam a interagir
+com os consumidores, oferecendo informações, demonstrações e experiências
+personalizadas através de tecnologias inteligentes.
+</p>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h2>52%</h2>
+<p>Mais interação com produtos</p>
+</div>
+
+<div class="stat">
+<h2>35%</h2>
+<p>Aumento do engajamento</p>
+</div>
+
+<div class="stat">
+<h2>28%</h2>
+<p>Mais conversões em vendas</p>
+</div>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div>
+<h3>2025</h3>
+<p>Etiquetas digitais e displays inteligentes.</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div>
+<h3>2030</h3>
+<p>Integração com realidade aumentada.</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div>
+<h3>2035</h3>
+<p>Showrooms totalmente interativos.</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div>
+<h3>2040</h3>
+<p>Experiências personalizadas em tempo real por IA.</p>
+</div>
+</div>
+
+</div>
+
+<div class="cta">
+
+<h2>O Produto Se Torna uma Experiência</h2>
+
+<p>
+A exposição inteligente cria conexões mais fortes entre consumidores e marcas,
+tornando a jornada de compra mais envolvente, informativa e memorável.
+</p>
+
+<a href="../index.html" class="btn">
+Voltar ao Início
+</a>
+
+</div>
+
+</section>
+
+</body>
+</html>

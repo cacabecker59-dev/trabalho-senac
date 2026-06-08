@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tecnologia | Loja do Futuro</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#070B1A;
+    --card:rgba(255,255,255,.05);
+    --purple:#8B5CF6;
+    --purple2:#A855F7;
+    --cyan:#22D3EE;
+    --text:#F8FAFC;
+    --gray:#94A3B8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+
+    min-height:70vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:50px;
+
+    position:relative;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(168,85,247,.25),
+    transparent 35%),
+
+    radial-gradient(circle at bottom right,
+    rgba(34,211,238,.15),
+    transparent 35%);
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:#8B5CF6;
+
+    border-radius:50%;
+
+    filter:blur(250px);
+
+    opacity:.15;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:var(--purple2);
+
+    text-shadow:
+    0 0 10px var(--purple),
+    0 0 25px var(--purple);
+}
+
+.hero p{
+
+    color:var(--gray);
+
+    font-size:1.2rem;
+
+    line-height:1.8;
+}
+
+/* CONTAINER */
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+/* TITULOS */
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:var(--gray);
+}
+
+/* CARDS */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+}
+
+.card{
+
+    background:var(--card);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--purple);
+
+    box-shadow:
+    0 0 30px rgba(168,85,247,.35);
+}
+
+.icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:var(--gray);
+    line-height:1.7;
+}
+
+/* TIMELINE */
+
+.timeline{
+
+    margin:120px auto;
+
+    max-width:900px;
+
+    position:relative;
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    width:3px;
+
+    height:100%;
+
+    background:var(--purple);
+
+    transform:translateX(-50%);
+}
+
+.timeline-item{
+
+    width:50%;
+
+    padding:25px;
+}
+
+.timeline-item div{
+
+    background:var(--card);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:25px;
+
+    border-radius:20px;
+}
+
+.timeline-item:nth-child(odd){
+    padding-right:50px;
+}
+
+.timeline-item:nth-child(even){
+
+    margin-left:50%;
+
+    padding-left:50px;
+}
+
+.timeline-item h3{
+    margin-bottom:10px;
+}
+
+/* DESTAQUE */
+
+.highlight{
+
+    margin:100px auto;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(139,92,246,.2),
+    rgba(168,85,247,.05)
+    );
+
+    border:1px solid rgba(168,85,247,.3);
+
+    border-radius:30px;
+
+    padding:60px;
+
+    text-align:center;
+}
+
+.highlight h2{
+    font-size:2.8rem;
+    margin-bottom:20px;
+}
+
+.highlight p{
+
+    color:var(--gray);
+
+    max-width:800px;
+
+    margin:auto;
+
+    line-height:1.8;
+}
+
+/* BOTÃO */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:15px 35px;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--purple),
+    var(--purple2)
+    );
+
+    transition:.4s;
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 20px var(--purple),
+    0 0 40px var(--purple);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .timeline::before{
+        left:20px;
+    }
+
+    .timeline-item{
+
+        width:100%;
+
+        margin:0!important;
+
+        padding-left:60px!important;
+        padding-right:0!important;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Tecnologia da <span>Loja do Futuro</span>
+</h1>
+
+<p>
+Conectando inteligência artificial, automação e experiências digitais
+para transformar completamente a jornada de compra.
+</p>
+
+</div>
+
+</section>
+
+<section class="container">
+
+<div class="section-title">
+<h2>Tecnologias Principais</h2>
+<p>As inovações que estão redefinindo o varejo.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🤖</div>
+<h3>Inteligência Artificial</h3>
+<p>
+Personalização de ofertas, análise comportamental e previsão de demanda.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📡</div>
+<h3>Internet das Coisas</h3>
+<p>
+Sensores inteligentes monitoram estoque e fluxo de clientes.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">🥽</div>
+<h3>Realidade Aumentada</h3>
+<p>
+Experimente produtos virtualmente antes da compra.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">📊</div>
+<h3>Big Data</h3>
+<p>
+Decisões estratégicas baseadas em dados em tempo real.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">💳</div>
+<h3>Checkout Inteligente</h3>
+<p>
+Compras rápidas sem filas e pagamentos automáticos.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">☁️</div>
+<h3>Cloud Computing</h3>
+<p>
+Infraestrutura escalável para integração de sistemas.
+</p>
+</div>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div>
+<h3>2025</h3>
+<p>Automação de estoque e atendimento inteligente.</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div>
+<h3>2030</h3>
+<p>Lojas totalmente conectadas e personalizadas por IA.</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div>
+<h3>2035</h3>
+<p>Experiências imersivas com realidade aumentada e virtual.</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div>
+<h3>2040</h3>
+<p>Ambientes autônomos com análise preditiva avançada.</p>
+</div>
+</div>
+
+</div>
+
+<div class="highlight">
+
+<h2>O Futuro Já Começou</h2>
+
+<p>
+A Loja do Futuro combina tecnologia, sustentabilidade e inovação
+para criar experiências únicas, eficientes e altamente conectadas.
+</p>
+
+<a href="../index.html" class="btn">
+Voltar ao Início
+</a>
+
+</div>
+
+</section>
+
+</body>
+</html>
